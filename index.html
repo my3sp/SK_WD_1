@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+
+    <!-- Google Font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; 
+            color: #333;
+        }
+
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 43, 41, 0.8);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+            transition: background-color 0.3s, padding 0.3s;
+            z-index: 1000; 
+        }
+
+        .navbar.scrolled {
+            background-color: #002b29;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s, padding 0.3s;
+            padding: 10px 15px;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #94e0dd;
+            color: #000000;
+            border-radius: 5px;
+            padding: 12px 17px;
+        }
+
+       
+        section {
+            height: 100vh;
+            padding: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        div{
+            background-color: #0278705f;
+            border-radius: 15px;
+            width:100%
+        }
+
+        section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 18px;
+        }
+
+        
+        #home {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-position: center;
+            color: #000000;
+        }
+
+        
+        #about {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #services {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        #contact {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+            }
+
+            section {
+                padding: 100px 20px;
+            }
+
+            section h1 {
+                font-size: 28px;
+            }
+
+            section p {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<main>
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+    <section id="home">
+        <div>
+            <h1>Welcome Home</h1>
+            <p>Explore our website. Scroll down for more information!</p>
+        </div>
+        </section>
+    
+    <section id="about">
+        <div>
+        <h1>About Us</h1>
+        <p>We are a team of passionate individuals dedicated to providing the best services.</p>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div>
+        <h1>Our Services</h1>
+        <p>We offer a variety of services tailored to meet your needs.</p>
+        </div>
+    </section>
+    </section>
+    
+    <section id="contact">
+        <div>
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us with any questions or inquiries.</p>
+        </div>
+    </section>
+</main>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>
